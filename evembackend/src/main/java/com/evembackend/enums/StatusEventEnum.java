@@ -1,13 +1,13 @@
 package com.evembackend.enums;
 
-public enum StatusEvEnum {
+public enum StatusEventEnum {
     ACTIVE("active"),
     INACTIVE("inactive"),
     DRAFT("draf");
 
     private final String value;
 
-    StatusEnum(String value) {
+    StatusEventEnum(String value) {
         this.value = value;
     }
 
@@ -16,9 +16,9 @@ public enum StatusEvEnum {
         return this.value;
     }
 
-    public static StatusEnum fromValue(String value)
+    public static StatusEventEnum fromValue(String value)
     {
-        for(StatusEnum status : StatusEnum.values())
+        for(StatusEventEnum status : StatusEventEnum.values())
         {
             if(status.value.equals(value))
                 return status;

@@ -1,5 +1,10 @@
 package com.evembackend.entity;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+import com.evembackend.enums.StatusRegistrationEnum;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,10 +18,17 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class Favorite {
+public class Registration {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long id;
-    
+    private Long Id;
+
+    @Column(nullable = false)
+    private LocalDate registrationDate;
+
+    @Column(nullable = false)
+    private LocalTime registrationLocalTime;
+
+    @Column(nullable = false)
+    private StatusRegistrationEnum status;
 }

@@ -1,23 +1,23 @@
 package com.evembackend.converter;
 
-import com.evembackend.enums.StatusEnum;
+import com.evembackend.enums.StatusEventEnum;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 
 //autoApply = true → aplica automaticamente pra todos os StatusEnum
 @Converter(autoApply = true)
-public class StatusConverter implements AttributeConverter<StatusEnum,String> {
+public class StatusEventConverter implements AttributeConverter<StatusEventEnum,String> {
     
     @Override
-    public String convertToDatabaseColumn(StatusEnum status)
+    public String convertToDatabaseColumn(StatusEventEnum status)
     {
         return (status != null) ? status.getValue() : null;
     }
 
     @Override
-    public StatusEnum convertToEntityAttribute(String value) {
+    public StatusEventEnum convertToEntityAttribute(String value) {
         // TODO Auto-generated method stub
-        return (value != null) ? StatusEnum.fromValue(value) : null;
+        return (value != null) ? StatusEventEnum.fromValue(value) : null;
     }
 }
